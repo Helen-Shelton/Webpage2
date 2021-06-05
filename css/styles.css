@@ -1,0 +1,135 @@
+/* div {
+  background-color: #faf0e6;
+  padding: 20px;
+} */
+body {
+  margin: 0;
+  /* all 4 sides will be 0 */
+  text-align: center;
+  font-family: 'Merriweather', serif;
+}
+
+h1 {
+  font-size: 5.625rem;
+  /* 90px/16px = 562.5%; --> (desired pixel size)/(actual pixel size for h1 at 100%) --> Used for dynamic font-sizing so it changes according to settigns of the user*/
+  /* font-size: 5.62em;  is another way of specifying the size. width of capitol "M" (pronounced "em") is exactly 16px */
+  margin-top: 0;
+  /* width: 10%; */
+  /* margin: 0 auto; */
+  /* Top and bottom = 0, left and right = auto (centered) */
+  font-family: 'Sacramento', cursive;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+h3 {
+  font-family: 'Montserrat', sans-serif;
+}
+.body-pic {
+  border-radius: 50%;
+}
+.top-cont {
+  background-color: #faf0e6;
+  padding-top: 60px;
+  position: relative;
+}
+
+.middle-cont {
+
+}
+
+.bottom-cont {
+
+}
+
+.soft {
+  text-decoration: underline;
+}
+
+.top-cloud {
+  position: absolute;
+  /* Assuming parent is the .top() class because it is set to relative */
+  right: 300px;
+  top: 50px;
+}
+
+.bottom-cloud {
+  position: absolute;
+  /*takes it out of the CSS flow (refer to box model) */
+  /* Assuming parent is the .top() class */
+  left: 300px;
+  bottom: 300px;
+}
+
+/* The positioning of an element is thought of as a box.
+It can be influenced by its margins, padding, border, height, width, and even its default CSS positioning and styling that google already applies
+(see inspect element->user agent stylesheet to see what default styling is already applied)
+
+HTML FLOW (Box Rules):
+1.Content: each HTML element only takes up as much room as the content. It also depends on it being a boxed vs in-line element
+2.Order: Comes from HTML code. The order in which it is written is the order in which it displays
+3.Children (Heirarchy): children sit on a parent, think of the box model in a 3 dimensional format.
+  It is like layering things on top of eachother in the z-axis.
+  Children are closer to the screen
+
+POSITION PROPERTY:
+1.Static: All HTML elements are static by default. HTML without CSS or changing the position property
+2.Relative: Allows us to position an element relative to itself had it been static.
+            ***DOES NOT change the positiioning of any other element, so it can overlap. "leaves a ghost"***
+            Uses co-ordinate properties: Top, bottom, left, right and # of pixels (ex 20px)
+3.Absolute: Allows us to position an element relative to its parent
+            ***DOES change the positiioning of other elements. "leaves a hole to be filled"***
+            Uses co-ordinate properties: Top, bottom, left, right and # of pixels (ex 20px)
+4.Fixed: Stays at the same position relative to its container (parent) regardless if the screen changes (user "scrolls")
+
+*/
+
+
+/*
+Centering Elements with CSS
+
+can use:
+--> text-align: center;
+Must be applied to the container (parent) of the element being centered
+***Using another property on something inside the parent (applied to the child) can undo the centering (ex. setting child width to 10%)***
+To combat this, you can use:
+--> margin: auto;
+automatically centers the child element, can use auto to specify all 4 dimensions separately. Must be applied to the child element
+*/
+
+
+/*
+Font-family
+
+when doing:
+font-family: verdana, sans-serif;
+Verdana specifies the type of sans-serif font we want. If the webpage cannot load the font, it will default to san-serif.
+To combat this we can use "Web Safe Fonts" where most operating systems can render the font correctly.
+
+To ensure even further rendering we could stack fallback fonts:
+font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+https://www.cssfontstack.com/
+
+To ensure everyone sees the same font, use "font embedding":
+https://fonts.google.com/?query=Mon
+on here you can save and add multiple fonts to your selection, then copy the import/<link> statement into the container
+and finally add the font-family into the tag or class or id
+
+
+Static VS Dynamic Font Sizing:
+Dynamic: fonts using percentages or em change with user settings
+Static: fonts using pixel sizing, do not change with user settings
+
+***Note that for dynamic fonts, they can be inherited (or added on) to parent settings. So if we increase the font size of the body and
+the font sizing for h1 in the body, the font for h1 will be larger than what is specified on the h1 tag alone.
+To avoid this we use "rem" (root em) instead of "em"
+
+
+Picture websites
+https://www.flaticon.com/
+
+
+
+*/
